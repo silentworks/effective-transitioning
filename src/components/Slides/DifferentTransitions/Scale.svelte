@@ -1,5 +1,5 @@
 <Slide>
-  <AnimatedH1 transitionType='scale' delay={400}>Scale</AnimatedH1>
+  <AnimatedH1 transitionType='scale' delay={400} repeat={true}>Scale</AnimatedH1>
 </Slide>
 
 <script>

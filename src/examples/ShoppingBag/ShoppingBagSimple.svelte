@@ -20,6 +20,7 @@
 		padding: 24px 16px;
 		width: 20px;
 		text-align: center;
+    font-variant-numeric: tabular-nums;
 	}
 </style>
 

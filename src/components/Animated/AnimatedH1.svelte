@@ -1,4 +1,4 @@
-<AnimatedHeader {transitionType} {delay} {duration} {x} {y} {amount} {opacity} {start} {easing}>
+<AnimatedHeader {transitionType} {delay} {duration} {x} {y} {amount} {opacity} {start} {easing} {repeat}>
   <h1><slot /></h1>
 </AnimatedHeader>
 
@@ -8,7 +8,6 @@
   import { cubicOut } from 'svelte/easing'
   import AnimatedHeader from './AnimatedHeader.svelte'
 
-  let animate = false
   export let delay = 0
   export let duration = 400
   export let x = -200
@@ -18,10 +17,7 @@
   export let start = 0
   export let easing = cubicOut
   export let transitionType = 'fly'
-
-  onMount(() => {
-		animate = true
-	})
+  export let repeat = false
 </script>
 
 <style>

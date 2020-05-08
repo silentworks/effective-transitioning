@@ -24,6 +24,7 @@
   import { onMount } from 'svelte'
   import { fly, fade, blur, slide, scale } from 'svelte/transition'
   import { cubicOut } from 'svelte/easing'
+  import { onInterval } from 'utils/interval'
 
   let animate = false
   export let delay = 0
@@ -35,8 +36,13 @@
   export let start = 0
   export let easing = cubicOut
   export let transitionType = 'fly'
+  export let repeat = false
 
   onMount(() => {
 		animate = true
-	})
+  })
+  
+  if (repeat) {
+    onInterval(() => animate = !animate, 1500)
+  }
 </script>

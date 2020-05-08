@@ -1,5 +1,5 @@
 <Slide>
-  <AnimatedH1 transitionType='blur' delay={400} opacity={1}>Blur</AnimatedH1>
+  <AnimatedH1 transitionType='blur' delay={400} opacity={1} repeat={true}>Blur</AnimatedH1>
 </Slide>
 
 <script>
