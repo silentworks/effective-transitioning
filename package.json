@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "prism-svelte": "^0.4.6",
-    "prismjs": "^1.20.0",
+    "prismjs": "^1.21.0",
     "robot3": "^0.2.13",
     "rollup-plugin-postcss": "^3.1.1",
     "sirv-cli": "^0.4.4"
