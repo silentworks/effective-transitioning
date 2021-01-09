@@ -22,10 +22,10 @@ const transitionTypes = createMachine({
         transition('previousIn', 'fly')
     ),
     scale: state(
-        transition('nextIn', 'end'),
-        transition('previousIn', 'slide')
+        transition('nextIn', 'next'),
+        transition('previousIn', 'slide'),
     ),
-    end: final()
+    next: final()
 })
 
 const maximiseExamples = createMachine({
@@ -53,10 +53,10 @@ const maximiseExamples = createMachine({
         transition('previousIn', 'modalSimple')
     ),
     modalCode: state(
-        transition('nextIn', 'notification'),
+        transition('nextIn', 'next'),
         transition('previousIn', 'modal')
     ),
-    notification: final()
+    next: final()
 })
 
 const routingMachine = initial => createMachine(initial, {
@@ -68,13 +68,12 @@ const routingMachine = initial => createMachine(initial, {
         transition('next', 'differentTransitions')
     ),
     differentTransitions: invoke(transitionTypes,
-        transition('nextIn', 'fade'),
-        transition('previous', 'what'),
         transition('next', 'maximise'),
+        transition('previous', 'what'),
     ),
     maximise: invoke(maximiseExamples,
-        transition('previous', 'differentTransitions'),
         transition('next', 'noCss'),
+        transition('previous', 'differentTransitions'),
     ),
     noCss: state(
         transition('previous', 'maximise'),

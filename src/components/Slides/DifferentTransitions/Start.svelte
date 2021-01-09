@@ -2,7 +2,7 @@
   <Slide>
     <AnimatedH2 x={400}>Svelte's Built-in Transitions</AnimatedH2>
     <ul>
-      {#if animate}
+      {#key animate}
       <li transition:fly={{ x: 200 }}>Fade</li>
       <li transition:fly={{ x: 200, delay: 40 }}>Blur</li>
       <li transition:fly={{ x: 200, delay: 80 }}>Fly</li>
@@ -10,7 +10,7 @@
       <li transition:fly={{ x: 200, delay: 160 }}>Scale</li>
       <li transition:fly={{ x: 200, delay: 200 }}>Draw*</li>
       <li transition:fly={{ x: 200, delay: 240 }}>Crossfade*</li>
-      {/if}
+      {/key}
     </ul>
   </Slide>
 </div>
@@ -20,12 +20,11 @@
   import { fly } from 'svelte/transition'
   import Slide  from 'components/Slide.svelte'
   import AnimatedH2  from 'components/Animated/AnimatedH2.svelte'
-  import AnimatedP  from 'components/Animated/AnimatedP.svelte'
 
-  let animate = false;
+  let animate = false
 
   setTimeout(() => {
-    animate = true;
+    animate = true
   }, 400)
 </script>
 

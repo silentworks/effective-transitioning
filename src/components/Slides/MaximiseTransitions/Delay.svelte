@@ -1,6 +1,6 @@
 <Layout>
   <AnimatedP x={400}>Delays are great, when used wisely.</AnimatedP>
-  {#if showExample}
+  {#key showExample}
   <button transition:fade on:click={() => withDelay = !withDelay}>Toggle Delay Example</button>
   <Example>
     {#if withDelay}
@@ -17,14 +17,13 @@
     </ul>
     {/if}
   </Example>
-  {/if}
+  {/key}
 </Layout>
 
 <script>
   import Layout from './Layout.svelte'
   import Example  from 'components/Example.svelte'
   import { fly, fade } from 'svelte/transition'
-  import AnimatedH2  from 'components/Animated/AnimatedH2.svelte'
   import AnimatedP  from 'components/Animated/AnimatedP.svelte'
 
   let showExample = false
@@ -36,18 +35,6 @@
 </script>
 
 <style>
-  .slide-container :global(.slide) {
-    --color: #fff;
-    --background-color: #308cce;
-  }
-  .example {
-    display: flex;
-    flex-direction: column;
-    padding: 0 10px;
-    height: 500px;
-    width: 100%;
-    position: relative;
-  }
   ul {
     position: absolute;
     left: 0;
