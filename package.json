@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "prism-svelte": "^0.4.7",
-    "prismjs": "^1.23.0",
+    "prismjs": "^1.25.0",
     "robot3": "^0.2.18",
     "sirv-cli": "^1.0.10"
   }
